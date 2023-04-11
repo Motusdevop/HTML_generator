@@ -1,0 +1,14 @@
+QWidget
+{
+    background-color: #ffd191;
+}
+
+QLineEdit
+{
+    background-color: #ffffff;
+}
+
+QPlainTextEdit
+{
+   background-color: #ffffff; 
+}
