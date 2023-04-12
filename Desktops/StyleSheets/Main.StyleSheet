@@ -1,14 +1,47 @@
 QWidget
 {
     background-color: #ffd191;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-
+QLabel
+{
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 QLineEdit
 {
     background-color: #ffffff;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 QPlainTextEdit
 {
-   background-color: #ffffff; 
+   background-color: #ffffff;
+   font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif; 
+}
+
+QPushButton
+{
+background-color: #008080;
+border: 1px solid #0077CC;
+border-radius: 4px;
+color: #FFFFFF;
+font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 17px;
+font-weight: 400;
+line-height: 1.47059;
+min-width: 30px;
+padding: 4px 15px;
+text-align: center;
+vertical-align: baseline;
+white-space: nowrap;
+}
+
+QPushButton:disabled {
+  opacity: .3;
+}
+
+QPushButton:pressed {
+  background-color: #007070;
+  border-color: #008080;
+  outline: none;
 }

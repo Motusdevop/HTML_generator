@@ -38,7 +38,7 @@ class Main(QWidget):
         vl.addWidget(self.H1_line)
         vl.addWidget(self.p_line)
 
-        vl.addWidget(self.Btn_commit)
+        vl.addWidget(self.Btn_commit, alignment=Qt.AlignCenter)
     
     def commit(self):
         try:
@@ -56,9 +56,38 @@ class Main(QWidget):
             self.source["p"] = self.p_line.toPlainText()
 
             html_gen.generate(self.source)
+
+            self.surccesfully = Successfully(Doc_name)
         except FileNotFoundError as e:
             self.instr.setText("error")
             print(e)
+    
+class Successfully(QWidget):
+
+    def __init__(self, doc_name : str):
+        super().__init__()
+        
+        with open("Desktops/StyleSheets/Successfully.StyleSheet") as file:
+            self.setStyleSheet(file.read())
+        
+        self.path = f"Results/{doc_name}.html"
+
+        self.Settings()
+        self.initUi()
+        self.show()
+    
+    def Settings(self):
+        self.resize(300, 200)
+
+    def initUi(self):
+        self.text = QLabel("Successfully!!!")
+        self.href = QLabel(f'<a href="{self.path}" style="color: #008080"> Open to view!</a>')
+        self.href.setOpenExternalLinks(True)
+
+        lay = QVBoxLayout(self)
+
+        lay.addWidget(self.text, alignment=Qt.AlignCenter)
+        lay.addWidget(self.href, alignment=Qt.AlignCenter)
 
 
         
