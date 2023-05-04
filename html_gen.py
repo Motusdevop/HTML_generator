@@ -1,5 +1,15 @@
+from PyQt5.QtWidgets import QLineEdit, QPlainTextEdit
+
 def generate(source: dict) -> None:
     Doc_name = source["Doc_name"]
+
+    body = ""
+
+    for item in source["Lines"]:
+        if type(item) is QLineEdit:
+            body += f"<h1>{item.text()}</h1>"
+        if type(item) is QPlainTextEdit:
+            body += f"<p>{item.toPlainText()}</p>"
 
     html_source = f"""
 <!DOCTYPE html>
@@ -11,8 +21,7 @@ def generate(source: dict) -> None:
     <title>{source["Title"]}</title>
 </head>
 <body>
-    <h1>{source["h1"]}</h1>
-    <p>{source["p"]}</p>
+    {body}
 </body>
 </html>
 """
